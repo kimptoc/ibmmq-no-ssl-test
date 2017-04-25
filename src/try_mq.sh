@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-echo "Running try_mq.sh"
+echo "Running try_mq.sh."
 
 #ls -ltr /opt/mqm/java/lib
 
 export MQ_CP="`echo /opt/mqm/java/lib/*.jar | sed 's/ /:/g'`"
 
 echo "Compiling Java code"
+
+mkdir -p out/main/java
 
 javac -cp $MQ_CP -d out/main/java src/main/java/*
 
